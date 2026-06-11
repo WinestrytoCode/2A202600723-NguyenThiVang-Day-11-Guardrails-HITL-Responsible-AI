@@ -6,9 +6,10 @@ import os
 
 def setup_api_key():
     """Load Google API key from environment or prompt."""
-    if "GOOGLE_API_KEY" not in os.environ:
+    if not os.environ.get("GOOGLE_API_KEY"):
         os.environ["GOOGLE_API_KEY"] = input("Enter Google API Key: ")
     os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "0"
+    os.environ["GEMINI_API_KEY"] = os.environ["GOOGLE_API_KEY"]
     print("API key loaded.")
 
 

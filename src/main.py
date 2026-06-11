@@ -28,10 +28,12 @@ async def part1_attacks():
     # Create and test the unsafe agent
     agent, runner = create_unsafe_agent()
     await test_agent(agent, runner)
+    await asyncio.sleep(10)
 
     # TODO 1: Run manual adversarial prompts
     print("\n--- Running manual attacks (TODO 1) ---")
     results = await run_attacks(agent, runner)
+    await asyncio.sleep(10)
 
     # TODO 2: Generate AI attack test cases
     print("\n--- Generating AI attacks (TODO 2) ---")
